@@ -1,12 +1,12 @@
 # NLP Text Classification - Kindle book reviews
 
-#### Author: Emir Tarık DAKIN
+#### Author: *Emir Tarık DAKIN*
 
 ## Introduction
 This project aims to classify book reviews from Amazon Kindle Store category based on their ratings. The project starts by giving a brief description of the data and then moves on to some Machine Learning algorithms. After taking a general overlook with the help of Lazy Classifier, a selection of these algorithms are optimized. Finally, an LSTM model is implemented and the results are compared.
 
 ## Dataset
-The data is a small subset of 12,000 book reviews from Amazon's Kindle Store category, which can be found [here](https://www.kaggle.com/meetnagadia/amazon-kindle-book-review-for-sentiment-analysis). The dataset originally consists of a body of text `reviewText`, a summary (or the title) of the review `summary` and a `rating` variable that ranges from 1 to 5 (stars). The `rating` variable is used to create the `score`, which ranges from 1 to 3 (respectively: negative, neutral and positive). A sample of the processed dataset can be found below.
+The data is a small subset of 12,000 book reviews from Amazon's Kindle Store category, which can be found [here](https://www.kaggle.com/meetnagadia/amazon-kindle-book-review-for-sentiment-analysis). The dataset originally consists of a body of text `reviewText`, a summary (or the title) of the review `summary` and a `rating` variable that ranges from 1 to 5 (stars). The `rating` variable is used to create the `score`, which ranges from 1 to 3 (respectively: *negative*, *neutral* and *positive*). A sample of the processed dataset can be found below.
 
 
   |       | reviewText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |   rating |   score |
@@ -17,6 +17,7 @@ The data is a small subset of 12,000 book reviews from Amazon's Kindle Store cat
   |  1486 | This book was not my cup of tea.  I stopped reading at about page 50.  I found it very slow-moving with too much emphasis on minute details that weren't necessary for plot or character building.  Yes, I wanted to know what was in that darn box,  but not badly enough for me to finish reading it.* I received a complimentary copy from the author through LibraryThing in exchange for an honest review.                                                                                                                                                                                                              |        1 |       1 |
   |  5276 | The prose went purple on the first page, so I skipped the aeons of italicized print to go to straight text.  Uhm.  The self-referential opening made me just slap my forehead and swear (yet again) never to buy a book unless I can make it through the first paragraph.                                                                                                                                                                                                                                                                                                                                                    |        1 |       1 |
 
+We can see that the number of reviews are more or less evenly distributed. Of course this will change when the ratings are grouped under the `score`, leaving less reviews in the *neutral* category.
 
 |    |   rating |   reviewText |
 |---:|---------:|-------------:|
@@ -26,10 +27,26 @@ The data is a small subset of 12,000 book reviews from Amazon's Kindle Store cat
 |  1 |        2 |         2000 |
 |  0 |        1 |         2000 |
 
+## Text cleaning
+The review texts are cleaned by:
 
+- converting to lowercase
+- removing punctuations
+- removing new line characters *\n*
+- removing stopwords
+- keeping a stemmed and a non-stemmed version
 
+Below is an example of a random review, which is unexpectedly pious.
 
+  The Old Testament has always been a bit of a mystery to me so I've  not studied it as much as other scriptures, until now. This part of David Ridges study series ties it in with gospel principles that are in all the scriptures and we see how the Gospel of Jesus Christ is eternal and was preached and practiced from the beginning.
 
+Here is the same review after cleaning the text.
+
+  old testament always bit mystery studied much scriptures part david ridges study series ties gospel principles scriptures see gospel jesus christ eternal preached practiced beginning
+
+And here it is again, stemmed this time, still very much pious.
+
+  old testament alway bit mysteri studi much scriptur part david ridg studi seri tie gospel principl scriptur see gospel jesus christ etern preach practic begin
 
 
 
