@@ -55,33 +55,33 @@ Starting off, a convenient package called [Lazy Predict](https://github.com/shan
 
 | Model                         |   Accuracy |   Balanced Accuracy | ROC AUC   |   F1 Score |   Time Taken |
 |:------------------------------|-----------:|--------------------:|:----------|-----------:|-------------:|
-| NearestCentroid               |   0.695    |            0.662475 |           |   0.712826 |     0.639638 |
-| LinearDiscriminantAnalysis    |   0.7175   |            0.629369 |           |   0.71278  |     8.62887  |
-| RidgeClassifierCV             |   0.734167 |            0.619075 |           |   0.712769 |     7.98943  |
-| RidgeClassifier               |   0.73375  |            0.618671 |           |   0.712429 |     1.56434  |
-| LogisticRegression            |   0.690417 |            0.614999 |           |   0.691442 |     7.33513  |
-| LinearSVC                     |   0.6975   |            0.614471 |           |   0.693572 |   101.602    |
-| LGBMClassifier                |   0.732917 |            0.612181 |           |   0.708803 |    36.8064   |
-| BernoulliNB                   |   0.68625  |            0.608822 |           |   0.691231 |     0.758016 |
-| SVC                           |   0.749167 |            0.607702 |           |   0.709223 |   286.186    |
-| PassiveAggressiveClassifier   |   0.69125  |            0.605003 |           |   0.6872   |     2.53631  |
-| SGDClassifier                 |   0.691667 |            0.602834 |           |   0.686716 |    15.9707   |
-| Perceptron                    |   0.684583 |            0.600952 |           |   0.680754 |     1.56892  |
-| XGBClassifier                 |   0.718333 |            0.599195 |           |   0.694547 |   141.005    |
-| NuSVC                         |   0.745    |            0.596642 |           |   0.699707 |   325.632    |
-| GaussianNB                    |   0.630833 |            0.592256 |           |   0.645817 |     0.794095 |
-| ExtraTreesClassifier          |   0.73     |            0.574199 |           |   0.672454 |    14.8279   |
-| CalibratedClassifierCV        |   0.720417 |            0.568919 |           |   0.667968 |   357.226    |
-| RandomForestClassifier        |   0.710417 |            0.557347 |           |   0.654228 |    10.0703   |
-| AdaBoostClassifier            |   0.665417 |            0.538349 |           |   0.633779 |    12.3546   |
-| BaggingClassifier             |   0.655    |            0.534288 |           |   0.627617 |    27.5029   |
-| QuadraticDiscriminantAnalysis |   0.691667 |            0.532706 |           |   0.629626 |    11.4495   |
-| DecisionTreeClassifier        |   0.557917 |            0.484086 |           |   0.557636 |     4.66952  |
-| ExtraTreeClassifier           |   0.55375  |            0.474102 |           |   0.555026 |     0.773879 |
-| KNeighborsClassifier          |   0.498333 |            0.420522 |           |   0.490383 |    80.0082   |
-| DummyClassifier               |   0.395833 |            0.33672  |           |   0.3962   |     0.588086 |
-| LabelSpreading                |   0.345    |            0.334168 |           |   0.17853  |    10.8557   |
-| LabelPropagation              |   0.345    |            0.334168 |           |   0.17853  |     9.43163  |
+| NearestCentroid               |   0.695    |            0.662475 |           |   0.712826 |     0.711752 |
+| LinearDiscriminantAnalysis    |   0.7175   |            0.629369 |           |   0.71278  |     8.89857  |
+| RidgeClassifierCV             |   0.734167 |            0.619075 |           |   0.712769 |     8.29491  |
+| RidgeClassifier               |   0.73375  |            0.618671 |           |   0.712429 |     1.61702  |
+| LogisticRegression            |   0.690417 |            0.614999 |           |   0.691442 |     7.19013  |
+| LinearSVC                     |   0.6975   |            0.614471 |           |   0.693572 |   103.08     |
+| LGBMClassifier                |   0.732917 |            0.612181 |           |   0.708803 |    37.4257   |
+| BernoulliNB                   |   0.68625  |            0.608822 |           |   0.691231 |     0.827498 |
+| SVC                           |   0.749167 |            0.607702 |           |   0.709223 |   286.954    |
+| PassiveAggressiveClassifier   |   0.69125  |            0.605003 |           |   0.6872   |     2.61749  |
+| SGDClassifier                 |   0.691667 |            0.602834 |           |   0.686716 |    15.9865   |
+| Perceptron                    |   0.684583 |            0.600952 |           |   0.680754 |     1.6244   |
+| XGBClassifier                 |   0.718333 |            0.599195 |           |   0.694547 |   142.149    |
+| NuSVC                         |   0.745    |            0.596642 |           |   0.699707 |   328.084    |
+| GaussianNB                    |   0.630833 |            0.592256 |           |   0.645817 |     0.902328 |
+| ExtraTreesClassifier          |   0.73     |            0.574199 |           |   0.672454 |    22.4783   |
+| CalibratedClassifierCV        |   0.720417 |            0.568919 |           |   0.667968 |   367.867    |
+| RandomForestClassifier        |   0.710417 |            0.557347 |           |   0.654228 |    12.9318   |
+| AdaBoostClassifier            |   0.665417 |            0.538349 |           |   0.633779 |    16.8121   |
+| BaggingClassifier             |   0.655    |            0.534288 |           |   0.627617 |    29.848    |
+| QuadraticDiscriminantAnalysis |   0.691667 |            0.532706 |           |   0.629626 |    11.9611   |
+| DecisionTreeClassifier        |   0.557917 |            0.484086 |           |   0.557636 |     5.69524  |
+| ExtraTreeClassifier           |   0.55375  |            0.474102 |           |   0.555026 |     0.854397 |
+| KNeighborsClassifier          |   0.498333 |            0.420522 |           |   0.490383 |    80.8093   |
+| DummyClassifier               |   0.395833 |            0.33672  |           |   0.3962   |     0.601491 |
+| LabelSpreading                |   0.345    |            0.334168 |           |   0.17853  |    10.8347   |
+| LabelPropagation              |   0.345    |            0.334168 |           |   0.17853  |     9.50772  |
   
 The same table but with the stemmed dataset this time is shown below.
 
