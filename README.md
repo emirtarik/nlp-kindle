@@ -122,8 +122,16 @@ Tuned Logistic Regression with Lasso optimization:
 |       1 |  23 |  63 |   24 |
 |       2 | 145 | 181 | 1075 |
 
-  Test accuracy - Logistic regression  Lasso = 0.747917
+``Test accuracy - Logistic regression  Lasso = 0.747917``
 
+Tuned Logistic Regression with Ridge optimization:
 
+|   row_0 |   0 |   1 |    2 |
+|--------:|----:|----:|-----:|
+|       0 | 657 | 120 |   84 |
+|       1 |  20 |  58 |   19 |
+|       2 | 148 | 199 | 1095 |
+
+``Accuracy on the test set = 0.754167
 
 
