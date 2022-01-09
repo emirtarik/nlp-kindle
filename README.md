@@ -114,4 +114,15 @@ The same table but with the stemmed dataset this time is shown below.
 | LabelPropagation              |   0.33     |            0.33361  |           |   0.164281 |     9.33287  |
 | DummyClassifier               |   0.391667 |            0.332009 |           |   0.390989 |     0.588089 |
   
-  
+Tuned Logistic Regression with Lasso optimization:
+
+  col_0    0    1     2
+  row_0                
+  0      657  133    99
+  1       23   63    24
+  2      145  181  1075
+  Test accuracy - Logistic regression Lasso = 0.747917
+
+
+
+
