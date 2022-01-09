@@ -116,12 +116,12 @@ The same table but with the stemmed dataset this time is shown below.
   
 Tuned Logistic Regression with Lasso optimization:
 
-  col_0    0    1     2
-  row_0                
-  0      657  133    99
-  1       23   63    24
-  2      145  181  1075
-  Test accuracy - Logistic regression Lasso = 0.747917
+|   row_0 |   0 |   1 |    2 |
+|--------:|----:|----:|-----:|
+|       0 | 657 | 133 |   99 |
+|       1 |  23 |  63 |   24 |
+|       2 | 145 | 181 | 1075 |
+`Test accuracy - Logistic regression  Lasso = 0.747917`
 
 
 
