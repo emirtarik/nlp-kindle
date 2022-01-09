@@ -6,7 +6,7 @@
 This project aims to classify book reviews from Amazon Kindle Store category based on their ratings. The project starts by giving a brief description of the data and then moves on to some Machine Learning algorithms. After taking a general overlook with the help of Lazy Classifier, a selection of these algorithms are optimized. Finally, an LSTM model is implemented and the results are compared.
 
 ## Dataset
-The dataset consists of a body of text `reviewText`, a summary (or the title) of the review `summary` and a `rating` variable that is 
+The data is a small subset of 12,000 book reviews from Amazon's Kindle Store category, which can be found [here](https://www.kaggle.com/meetnagadia/amazon-kindle-book-review-for-sentiment-analysis). The dataset originally consists of a body of text `reviewText`, a summary (or the title) of the review `summary` and a `rating` variable that ranges from 1 to 5 (stars). The `rating` variable is used to create the `score`, which ranges from 1 to 3 (respectively: negative, neutral and positive). A sample of the processed dataset can be found below.
 
 
   |       | reviewText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |   rating |   score |
@@ -18,6 +18,13 @@ The dataset consists of a body of text `reviewText`, a summary (or the title) of
   |  5276 | The prose went purple on the first page, so I skipped the aeons of italicized print to go to straight text.  Uhm.  The self-referential opening made me just slap my forehead and swear (yet again) never to buy a book unless I can make it through the first paragraph.                                                                                                                                                                                                                                                                                                                                                    |        1 |       1 |
 
 
+|    |   rating |   reviewText |
+|---:|---------:|-------------:|
+|  4 |        5 |         3000 |
+|  3 |        4 |         3000 |
+|  2 |        3 |         2000 |
+|  1 |        2 |         2000 |
+|  0 |        1 |         2000 |
 
 
 
