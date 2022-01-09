@@ -32,63 +32,86 @@ The review texts are cleaned by:
 
 - converting to lowercase
 - removing punctuations
-- removing new line characters *\n*
+- removing new line characters
 - removing stopwords
 - keeping a stemmed and a non-stemmed version
 
 Below is an example of a random review, which is unexpectedly pious.
 
-  The Old Testament has always been a bit of a mystery to me so I've  not studied it as much as other scriptures, until now. This part of David Ridges study series ties it in with gospel principles that are in all the scriptures and we see how the Gospel of Jesus Christ is eternal and was preached and practiced from the beginning.
+> The Old Testament has always been a bit of a mystery to me so I've  not studied it as much as other scriptures, until now. This part of David Ridges study series ties it in with gospel principles that are in all the scriptures and we see how the Gospel of Jesus Christ is eternal and was preached and practiced from the beginning.
 
 Here is the same review after cleaning the text.
 
-  old testament always bit mystery studied much scriptures part david ridges study series ties gospel principles scriptures see gospel jesus christ eternal preached practiced beginning
+> old testament always bit mystery studied much scriptures part david ridges study series ties gospel principles scriptures see gospel jesus christ eternal preached practiced beginning
 
 And here it is again, stemmed this time, still very much pious.
 
-  old testament alway bit mysteri studi much scriptur part david ridg studi seri tie gospel principl scriptur see gospel jesus christ etern preach practic begin
+> old testament alway bit mysteri studi much scriptur part david ridg studi seri tie gospel principl scriptur see gospel jesus christ etern preach practic begin
 
+For classification purposes, TF-IDF representation is used for each review using 1 and 2-gram words.
 
+## ML algorithms
+Starting off, a convenient package called [Lazy Predict](https://github.com/shankarpandala/lazypredict) helps to get insights on how the most-known algorithms work without any tuning. Below is a list of algorithms applied on the Kindle book reviews dataset and basic respective metrics. SVC methods are the best (they also take the longest).
 
-  | Model                         |   Accuracy |   Balanced Accuracy | ROC AUC   |   F1 Score |   Time Taken |
-  |:------------------------------|-----------:|--------------------:|:----------|-----------:|-------------:|
-  | NearestCentroid               |   0.695    |            0.662475 |           |   0.712826 |     0.639638 |
-  | LinearDiscriminantAnalysis    |   0.7175   |            0.629369 |           |   0.71278  |     8.62887  |
-  | RidgeClassifierCV             |   0.734167 |            0.619075 |           |   0.712769 |     7.98943  |
-  | RidgeClassifier               |   0.73375  |            0.618671 |           |   0.712429 |     1.56434  |
-  | LogisticRegression            |   0.690417 |            0.614999 |           |   0.691442 |     7.33513  |
-  | LinearSVC                     |   0.6975   |            0.614471 |           |   0.693572 |   101.602    |
-  | LGBMClassifier                |   0.732917 |            0.612181 |           |   0.708803 |    36.8064   |
-  | BernoulliNB                   |   0.68625  |            0.608822 |           |   0.691231 |     0.758016 |
-  | SVC                           |   0.749167 |            0.607702 |           |   0.709223 |   286.186    |
-  | PassiveAggressiveClassifier   |   0.69125  |            0.605003 |           |   0.6872   |     2.53631  |
-  | SGDClassifier                 |   0.691667 |            0.602834 |           |   0.686716 |    15.9707   |
-  | Perceptron                    |   0.684583 |            0.600952 |           |   0.680754 |     1.56892  |
-  | XGBClassifier                 |   0.718333 |            0.599195 |           |   0.694547 |   141.005    |
-  | NuSVC                         |   0.745    |            0.596642 |           |   0.699707 |   325.632    |
-  | GaussianNB                    |   0.630833 |            0.592256 |           |   0.645817 |     0.794095 |
-  | ExtraTreesClassifier          |   0.73     |            0.574199 |           |   0.672454 |    14.8279   |
-  | CalibratedClassifierCV        |   0.720417 |            0.568919 |           |   0.667968 |   357.226    |
-  | RandomForestClassifier        |   0.710417 |            0.557347 |           |   0.654228 |    10.0703   |
-  | AdaBoostClassifier            |   0.665417 |            0.538349 |           |   0.633779 |    12.3546   |
-  | BaggingClassifier             |   0.655    |            0.534288 |           |   0.627617 |    27.5029   |
-  | QuadraticDiscriminantAnalysis |   0.691667 |            0.532706 |           |   0.629626 |    11.4495   |
-  | DecisionTreeClassifier        |   0.557917 |            0.484086 |           |   0.557636 |     4.66952  |
-  | ExtraTreeClassifier           |   0.55375  |            0.474102 |           |   0.555026 |     0.773879 |
-  | KNeighborsClassifier          |   0.498333 |            0.420522 |           |   0.490383 |    80.0082   |
-  | DummyClassifier               |   0.395833 |            0.33672  |           |   0.3962   |     0.588086 |
-  | LabelSpreading                |   0.345    |            0.334168 |           |   0.17853  |    10.8557   |
-  | LabelPropagation              |   0.345    |            0.334168 |           |   0.17853  |     9.43163  |
+| Model                         |   Accuracy |   Balanced Accuracy | ROC AUC   |   F1 Score |   Time Taken |
+|:------------------------------|-----------:|--------------------:|:----------|-----------:|-------------:|
+| NearestCentroid               |   0.695    |            0.662475 |           |   0.712826 |     0.639638 |
+| LinearDiscriminantAnalysis    |   0.7175   |            0.629369 |           |   0.71278  |     8.62887  |
+| RidgeClassifierCV             |   0.734167 |            0.619075 |           |   0.712769 |     7.98943  |
+| RidgeClassifier               |   0.73375  |            0.618671 |           |   0.712429 |     1.56434  |
+| LogisticRegression            |   0.690417 |            0.614999 |           |   0.691442 |     7.33513  |
+| LinearSVC                     |   0.6975   |            0.614471 |           |   0.693572 |   101.602    |
+| LGBMClassifier                |   0.732917 |            0.612181 |           |   0.708803 |    36.8064   |
+| BernoulliNB                   |   0.68625  |            0.608822 |           |   0.691231 |     0.758016 |
+| SVC                           |   0.749167 |            0.607702 |           |   0.709223 |   286.186    |
+| PassiveAggressiveClassifier   |   0.69125  |            0.605003 |           |   0.6872   |     2.53631  |
+| SGDClassifier                 |   0.691667 |            0.602834 |           |   0.686716 |    15.9707   |
+| Perceptron                    |   0.684583 |            0.600952 |           |   0.680754 |     1.56892  |
+| XGBClassifier                 |   0.718333 |            0.599195 |           |   0.694547 |   141.005    |
+| NuSVC                         |   0.745    |            0.596642 |           |   0.699707 |   325.632    |
+| GaussianNB                    |   0.630833 |            0.592256 |           |   0.645817 |     0.794095 |
+| ExtraTreesClassifier          |   0.73     |            0.574199 |           |   0.672454 |    14.8279   |
+| CalibratedClassifierCV        |   0.720417 |            0.568919 |           |   0.667968 |   357.226    |
+| RandomForestClassifier        |   0.710417 |            0.557347 |           |   0.654228 |    10.0703   |
+| AdaBoostClassifier            |   0.665417 |            0.538349 |           |   0.633779 |    12.3546   |
+| BaggingClassifier             |   0.655    |            0.534288 |           |   0.627617 |    27.5029   |
+| QuadraticDiscriminantAnalysis |   0.691667 |            0.532706 |           |   0.629626 |    11.4495   |
+| DecisionTreeClassifier        |   0.557917 |            0.484086 |           |   0.557636 |     4.66952  |
+| ExtraTreeClassifier           |   0.55375  |            0.474102 |           |   0.555026 |     0.773879 |
+| KNeighborsClassifier          |   0.498333 |            0.420522 |           |   0.490383 |    80.0082   |
+| DummyClassifier               |   0.395833 |            0.33672  |           |   0.3962   |     0.588086 |
+| LabelSpreading                |   0.345    |            0.334168 |           |   0.17853  |    10.8557   |
+| LabelPropagation              |   0.345    |            0.334168 |           |   0.17853  |     9.43163  |
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+The same table but with the stemmed dataset this time is shown below.
+
+| Model                         |   Accuracy |   Balanced Accuracy | ROC AUC   |   F1 Score |   Time Taken |
+|:------------------------------|-----------:|--------------------:|:----------|-----------:|-------------:|
+| NearestCentroid               |   0.68875  |            0.647887 |           |   0.704496 |     0.664193 |
+| BernoulliNB                   |   0.701667 |            0.620169 |           |   0.69929  |     0.804801 |
+| LGBMClassifier                |   0.722083 |            0.601189 |           |   0.69212  |    39.2781   |
+| LinearDiscriminantAnalysis    |   0.6875   |            0.599636 |           |   0.6824   |     8.64746  |
+| RidgeClassifierCV             |   0.706667 |            0.591745 |           |   0.682084 |     8.10922  |
+| RidgeClassifier               |   0.70625  |            0.590918 |           |   0.681435 |     1.59814  |
+| SVC                           |   0.73     |            0.589862 |           |   0.682854 |   288.484    |
+| XGBClassifier                 |   0.710833 |            0.588596 |           |   0.679463 |   143.082    |
+| LogisticRegression            |   0.670417 |            0.586767 |           |   0.667628 |     7.30668  |
+| SGDClassifier                 |   0.668333 |            0.574314 |           |   0.658131 |    18.6974   |
+| ExtraTreesClassifier          |   0.7225   |            0.57309  |           |   0.661486 |    21.1623   |
+| PassiveAggressiveClassifier   |   0.6575   |            0.571532 |           |   0.65304  |     2.81159  |
+| Perceptron                    |   0.659167 |            0.570956 |           |   0.655097 |     1.49383  |
+| LinearSVC                     |   0.65875  |            0.569086 |           |   0.65186  |   100.346    |
+| GaussianNB                    |   0.6075   |            0.568074 |           |   0.626221 |     0.838924 |
+| CalibratedClassifierCV        |   0.703333 |            0.560547 |           |   0.650221 |   351.726    |
+| RandomForestClassifier        |   0.701667 |            0.551876 |           |   0.638835 |    10.0304   |
+| AdaBoostClassifier            |   0.667917 |            0.543395 |           |   0.63305  |    17.0222   |
+| BaggingClassifier             |   0.648333 |            0.532293 |           |   0.616795 |    32.1461   |
+| QuadraticDiscriminantAnalysis |   0.67875  |            0.53189  |           |   0.614887 |    11.6421   |
+| DecisionTreeClassifier        |   0.56625  |            0.489024 |           |   0.562785 |     6.1668   |
+| ExtraTreeClassifier           |   0.54875  |            0.467413 |           |   0.542463 |     0.849395 |
+| KNeighborsClassifier          |   0.514167 |            0.415929 |           |   0.481629 |    79.9365   |
+| LabelSpreading                |   0.33     |            0.33361  |           |   0.164281 |    10.5021   |
+| LabelPropagation              |   0.33     |            0.33361  |           |   0.164281 |     9.33287  |
+| DummyClassifier               |   0.391667 |            0.332009 |           |   0.390989 |     0.588089 |
   
   
