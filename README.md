@@ -122,7 +122,7 @@ Tuned Logistic Regression with Lasso optimization:
 |       1 |  23 |  63 |   24 |
 |       2 | 145 | 181 | 1075 |
 
-``Test accuracy - Logistic regression  Lasso = 0.747917``
+``Test accuracy - Logistic regression Lasso = 0.747917``
 
 Tuned Logistic Regression with Ridge optimization:
 
@@ -132,6 +132,24 @@ Tuned Logistic Regression with Ridge optimization:
 |       1 |  20 |  58 |   19 |
 |       2 | 148 | 199 | 1095 |
 
-``Accuracy on the test set = 0.754167
+``Test accuracy - Logistic regression Ridge = 0.754167``
 
+Tuned Random Forest:
 
+|   row_0 |   0 |   1 |    2 |
+|--------:|----:|----:|-----:|
+|       0 | 548 | 111 |   55 |
+|       1 |   1 |   1 |    0 |
+|       2 | 276 | 265 | 1143 |
+
+``Test accuracy - Random forest = 0.705000``
+
+Tuned SVC:
+
+|   row_0 |   0 |   1 |    2 |
+|--------:|----:|----:|-----:|
+|       0 | 630 | 125 |  103 |
+|       1 |  59 |  98 |   74 |
+|       2 | 136 | 154 | 1021 |
+
+``Test accuracy - SVC = 0.728750``
