@@ -155,16 +155,6 @@ Tuned Random Forest:
 
 ``Test accuracy - Random forest = 0.705000``
 
-Tuned SVC:
-
-|   row_0 |   0 |   1 |    2 |
-|--------:|----:|----:|-----:|
-|       0 | 630 | 125 |  103 |
-|       1 |  59 |  98 |   74 |
-|       2 | 136 | 154 | 1021 |
-
-``Test accuracy - SVC = 0.728750``
-
 Tuned Gradient boosting:
 
 |   row_0 |   0 |   1 |    2 |
@@ -189,14 +179,13 @@ Number of mislabeled points out of a total 2400 points : 694
 ## Neural networks
 
 ### Crude models
-
 The application of neural networks start with two crude sequential models. As expected, the most basic model that uses stochastic gradient descent is not that good and performs worse than the tuned ML algorithms in the previous part. However, there is room to improve.
 
 ![Crude neural network with SGD](/images/crude.png "Crude neural network with SGD")
 
-This time, the same model is run with mini batch gradient descent and the inclusion of a momentum variable. This is significantly better than the initial model but still not as good as the logistic regression with the ridge optimization.
+This time, the same model is run with mini-batch gradient descent and the inclusion of a momentum variable. We observe that this is significantly better than the initial model and provides a much-better-behaving loss curve for the validation set. However, it is still not as good as the logistic regression with the ridge optimization.
 
-![Crude neural network with mini batch + momentum](/images/crude_mini.png "Crude neural network with mini batch + momentum")
+![Crude neural network with mini-batch + momentum](/images/crude_mini.png "Crude neural network with mini-batch + momentum")
 
 
 |                             |   accuracy |     f1 |   precision |   recall |
@@ -205,19 +194,19 @@ This time, the same model is run with mini batch gradient descent and the inclus
 | Crude mini-batch + Momentum |     0.7496 | 0.7076 |      0.7234 |   0.7496 |
 
 ### CNN models
-
+Convulational neural networks are most commonly applied to analyze visual imagery but they are also known to work for NLP as well. Relying on that, we look at a simple CNN model on our dataset below. It doesn't look really pleasant at first, so we move on with using two classic optimizations.
 
 ![Convolutional neural network](/images/c1.png "Convolutional neural network")
 
-
+First, the L1 optimization. This seems much better compared to the one above.
 
 ![Convolutional neural network with L1 optimization](/images/c2.png "Convolutional neural network with L1 optimization")
 
-
+Lastly, the L2 optimization. This one is clearly worse than L1.
 
 ![Convolutional neural network with L2 optimization](/images/c3.png "Convolutional neural network with L2 optimization")
 
-
+We see that the CNN models do not work as well as the crude sequential model with mini-batch optimization and a momentum variable, nor as our tuned ML algorithms.
 
 |          |   accuracy |     f1 |   precision |   recall |
 |:---------|-----------:|-------:|------------:|---------:|
@@ -225,3 +214,7 @@ This time, the same model is run with mini batch gradient descent and the inclus
 | CNN + l1 |     0.7238 | 0.6902 |      0.6783 |   0.7238 |
 | CNN + l2 |     0.7125 | 0.6817 |      0.6701 |   0.7125 |
 
+## Conclusion
+In this project we tried to artificially understand and categorize book reviews, which is simply another text classification problem. We used three categories (*negative*, *neutral* and *positive*) instead of the original five (1-5 star rating system). We observe how certain optimization and regularization methods could improve our predictions. We tried common ML algorithms, used basic sequential models with TF-IDF and also convulational neural networks with fastText. Ironically, in the end the best method was our optimized logistic regression. I'm guessing that the neural networks would perform better if the dataset was much much larger. But at least they held up quite well compared to the ML algorithms.
+
+*You can find more visuals and graphs in the notebook.*
