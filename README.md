@@ -183,14 +183,28 @@ Number of mislabeled points out of a total 2400 points : 694
 |       0 | 649 | 131 | 133 |
 |       1 |  82 | 146 | 154 |
 |       2 |  94 | 100 | 911 |
-|       2 |  94 | 100 | 911 |
-|       2 |  94 | 100 | 911 |
 
 ``Test accuracy - Gaussian Naive Bayes = 0.710833``
 
 ## Neural networks
 
-![The San Juan Mountains are beautiful!](/images/crude.png "San Juan Mountains")
+### Crude models
+
+![Crude neural network with SGD](/images/crude.png "Crude neural network with SGD")
 
 
-![The San Juan Mountains are beautiful!](/images/crude_mini.png "San Juan Mountains")
+![Crude neural network with mini batch + momentum](/images/crude_mini.png "Crude neural network with mini batch + momentum")
+
+### CNN models
+
+
+![Convolutional neural network](/images/c1.png "Convolutional neural network")
+
+
+
+![Convolutional neural network with L1 optimization](/images/c2.png "Convolutional neural network with L1 optimization")
+
+
+
+![Convolutional neural network with L2 optimization](/images/c3.png "Convolutional neural network with L2 optimization")
+
