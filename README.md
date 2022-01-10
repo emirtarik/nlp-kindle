@@ -188,4 +188,9 @@ Number of mislabeled points out of a total 2400 points : 694
 
 ``Test accuracy - Gaussian Naive Bayes = 0.710833``
 
+## Neural networks
 
+![The San Juan Mountains are beautiful!](/images/crude.png "San Juan Mountains")
+
+
+![The San Juan Mountains are beautiful!](/images/crude_mini.png "San Juan Mountains")
