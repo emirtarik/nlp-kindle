@@ -123,7 +123,7 @@ It is clear that almost all algorithms make more sense of the unstemmed text, as
 - Gradient boosting
 - Naive Bayes
 
-The models are optimized t
+The models are optimized with classic grid search methods or with manual intuition (or we can call it the biological Bayes search).
 
 Tuned Logistic Regression with Lasso optimization:
 
