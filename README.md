@@ -195,6 +195,12 @@ Number of mislabeled points out of a total 2400 points : 694
 
 ![Crude neural network with mini batch + momentum](/images/crude_mini.png "Crude neural network with mini batch + momentum")
 
+
+|                             |   accuracy |     f1 |   precision |   recall |
+|:----------------------------|-----------:|-------:|------------:|---------:|
+| Crude SGD                   |     0.7079 | 0.7018 |      0.6968 |   0.7079 |
+| Crude mini-batch + Momentum |     0.7496 | 0.7076 |      0.7234 |   0.7496 |
+
 ### CNN models
 
 
@@ -207,4 +213,12 @@ Number of mislabeled points out of a total 2400 points : 694
 
 
 ![Convolutional neural network with L2 optimization](/images/c3.png "Convolutional neural network with L2 optimization")
+
+
+
+|          |   accuracy |     f1 |   precision |   recall |
+|:---------|-----------:|-------:|------------:|---------:|
+| CNN      |     0.6975 | 0.6993 |      0.7014 |   0.6975 |
+| CNN + l1 |     0.7238 | 0.6902 |      0.6783 |   0.7238 |
+| CNN + l2 |     0.7125 | 0.6817 |      0.6701 |   0.7125 |
 
