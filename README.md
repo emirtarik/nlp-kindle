@@ -190,8 +190,11 @@ Number of mislabeled points out of a total 2400 points : 694
 
 ### Crude models
 
+The application of neural networks start with two crude sequential models. As expected, the most basic model that uses stochastic gradient descent is not that good and performs worse than the tuned ML algorithms in the previous part. However, there is room to improve.
+
 ![Crude neural network with SGD](/images/crude.png "Crude neural network with SGD")
 
+This time, the same model is run with mini batch gradient descent and the inclusion of a momentum variable. This is significantly better than the initial model but still not as good as the logistic regression with the ridge optimization.
 
 ![Crude neural network with mini batch + momentum](/images/crude_mini.png "Crude neural network with mini batch + momentum")
 
