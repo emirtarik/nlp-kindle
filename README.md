@@ -116,13 +116,14 @@ The same table but with the stemmed dataset this time is shown below.
 
 It is clear that almost all algorithms make more sense of the unstemmed text, as the accuracies for the models on the stemmed data are lower in most cases. Therefore, the rest of the project uses the unstemmed version of the dataset. Moving forward, the following models are optimized:
 
--Logistic regression
-  -Lasso optimization
-  -Ridge optimization
--Random forest
--Support Vector Machines
--Gradient boosting
--Naive Bayes
+- Logistic regression
+  - Lasso optimization
+  - Ridge optimization
+- Random forest
+- Gradient boosting
+- Naive Bayes
+
+The models are optimized t
 
 Tuned Logistic Regression with Lasso optimization:
 
@@ -163,3 +164,28 @@ Tuned SVC:
 |       2 | 136 | 154 | 1021 |
 
 ``Test accuracy - SVC = 0.728750``
+
+Tuned Gradient boosting:
+
+|   row_0 |   0 |   1 |    2 |
+|--------:|----:|----:|-----:|
+|       0 | 622 | 118 |  101 |
+|       1 |  45 |  70 |   39 |
+|       2 | 158 | 189 | 1058 |
+
+``Test accuracy - Gradient Boosting = 0.729167``
+
+Tuned Naive Gaussian Bayes:
+
+Number of mislabeled points out of a total 2400 points : 694
+|   row_0 |   0 |   1 |   2 |
+|--------:|----:|----:|----:|
+|       0 | 649 | 131 | 133 |
+|       1 |  82 | 146 | 154 |
+|       2 |  94 | 100 | 911 |
+|       2 |  94 | 100 | 911 |
+|       2 |  94 | 100 | 911 |
+
+``Test accuracy - Gaussian Naive Bayes = 0.710833``
+
+
