@@ -113,7 +113,17 @@ The same table but with the stemmed dataset this time is shown below.
 | LabelSpreading                |   0.33     |            0.33361  |           |   0.164281 |    10.5021   |
 | LabelPropagation              |   0.33     |            0.33361  |           |   0.164281 |     9.33287  |
 | DummyClassifier               |   0.391667 |            0.332009 |           |   0.390989 |     0.588089 |
-  
+
+It is clear that almost all algorithms make more sense of the unstemmed text, as the accuracies for the models on the stemmed data are lower in most cases. Therefore, the rest of the project uses the unstemmed version of the dataset. Moving forward, the following models are optimized:
+
+-Logistic regression
+  -Lasso optimization
+  -Ridge optimization
+-Random forest
+-Support Vector Machines
+-Gradient boosting
+-Naive Bayes
+
 Tuned Logistic Regression with Lasso optimization:
 
 |   row_0 |   0 |   1 |    2 |
